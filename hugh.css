@@ -1,42 +1,65 @@
 /* Hugh stylin' */
 
+.hugh__screen-reader-text {
+	position: absolute;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+	word-wrap: normal !important; /* many screen reader and browser combinations announce broken words as they would appear visually */
+}
+
 .hugh__form {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+	content:"";
+	display:table;
+	position: relative;
+	margin-top: 8px;
 	margin-bottom: 8px;
+}
+
+.hugh__form:after {
+	clear:both;
 }
 
 .hugh__color {
 	display: block;
-	width: 56px;
+	float: left;
+	width: 36px;
 	height: 40px;
 	margin-right: 4px;
 	padding: 0 2px;
-	flex-shrink: 0;
 }
 
 .hugh__label {
-	-webkit-box-flex: 1;
-	-webkit-flex-grow: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-	-webkit-flex-shrink: 0;
-	-ms-flex-negative: 0;
-	flex-shrink: 0;
+	float: left;
 	min-height: 40px;
 	min-width: 160px;
+	min-width: 0;
+	width: 100%;
+	width: calc( 100% - 80px );
+	height: 40px;
+	margin-right: 4px;
+	padding: 8px 12px;
+	font-size: 14px;
 }
 
 .hugh__submit {
-	display: none;
+	width: 36px;
+	height: 40px;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	text-align: center;
+	/*display: none;*/
 }
 
 /* Container for previous colorways */
 .hugh__colorways {
 	content:"";
 	display:table;
+	margin: 0 -2px;
 }
 
 .hugh__colorways:after {
@@ -46,7 +69,7 @@
 .hugh__colorway {
 	position: relative;
 	float: left;
-	margin: 0 4px 4px 0;
+	margin: 0 2px 4px;
 	width: 16px;
 	height: 16px;
 	background: grey; /* TODO temporary */

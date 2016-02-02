@@ -125,20 +125,23 @@ class Hugh_Widget extends WP_Widget {
 
 		<form class="hugh__form">
 			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />
-			<input class="hugh__label" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Because of reasons…', 'hugh' ); ?>" />
-			<input class="hugh__submit" type="submit" />
+			<input class="hugh__label" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Tell me why...', 'hugh' ); ?>" />
+			<button class="hugh__submit" type="submit" ><span class="hugh__screen-reader-text">Submit</span>!</button>
 		</form>
 
 		<div class="hugh__colorways"></div>
 
 		<script type="text/html" id="tmpl-color-template">
 			<a href="#" aria-label="recently used color" class="hugh__colorway" style="background-color:{{{ data.color }}}" title="{{{ data.label }}}" data-color="{{{ data.color }}}">
+				<span class="hugh__screen-reader-text">{{{ data.label }}}</span>
 				<div class="hugh__colorway-accent"></div>
 			</a>
 		</script>
 		<script type="text/html" id="tmpl-style-template">
 			#content {
 				background-color: {{{ data.color }}};
+				-webkit-transition: background .3s ease-in-out;
+				transition: background .3s ease-in-out;
 			}
 		</script>
 		<?php
