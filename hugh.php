@@ -114,7 +114,11 @@ class Hugh_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		wp_enqueue_style( 'hugh', plugins_url( 'hugh/hugh.css' ) );
-		wp_enqueue_script( 'hugh', plugins_url( 'hugh/hugh.js' ) );
+		wp_enqueue_script( 'hugh', plugins_url( 'hugh/hugh.js' ), array( 'wp-util' ), time() );
+		wp_localize_script( 'hugh', 'Hugh', array(
+			'root'       => esc_url_raw( rest_url() ),
+			'namespace'  => 'hugh/v1',
+		) );
 		echo $args['before_widget'];
 		?>
 		<h1>Hugh</h1>
@@ -124,81 +128,7 @@ class Hugh_Widget extends WP_Widget {
 		<input class="hugh__submit" type="submit" />
 		</form>
 
-		<div class="hugh__colorways">
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-			<a href="#" aria-label="recently used color" class="hugh__colorway">
-				<div class="hugh__colorway-accent"></div>
-			</a>
-
-		</div>
+		<div class="hugh__colorways"></div>
 
 		<script type="text/html" id="tmpl-color-template">
 			<a href="#" aria-label="recently used color" class="hugh__colorway" title="{{{ data.label }}}">
