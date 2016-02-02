@@ -48,54 +48,79 @@ class Hugh_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		?>
 		<div class="hugh__colorways">
-			<div class="hugh__colorway">
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
-			<div class="hugh__colorway">
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
-			</div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			<a href="#" aria-label="recently used color" class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</a>
+			
 		</div>
 		<?php
 		echo $args['after_widget'];

@@ -10,6 +10,32 @@
 	background: grey; /* TODO temporary */
 }
 
+@-webkit-keyframes color-hover {
+	60% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+
+@keyframes color-hover {
+	60% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+
+.hugh__colorway:focus,
+.hugh__colorway:hover {
+	-webkit-animation: color-hover .2s ease-in-out;
+	animation: color-hover .2s ease-in-out;
+}
+
+.hugh__colorway:focus {
+	box-shadow: 0 0 0 2px purple;
+	box-shadow: 0 0 0 2px rebeccapurple;
+	box-shadow: 0 0 0 2px currentColor;
+}
+
 .hugh__colorway-accent {
 	position: absolute;
 		top: 6px;
