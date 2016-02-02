@@ -121,7 +121,7 @@ class Hugh_Widget extends WP_Widget {
 		) );
 		echo $args['before_widget'];
 		?>
-		<h1>Hugh</h1>
+		<h1 class="widget-title">Make a color decision</h1>
 
 		<form class="hugh__form">
 			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />

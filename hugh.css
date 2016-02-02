@@ -16,8 +16,7 @@
 	content:"";
 	display:table;
 	position: relative;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 }
 
 .hugh__form:after {
