@@ -119,8 +119,10 @@ class Hugh_Widget extends WP_Widget {
 		?>
 		<h1>Hugh</h1>
 
+		<form class="hugh__form">
 		<input class="hugh__primary-color" type="color" id="hugh_color" />
 		<input class="hugh__submit" type="submit" />
+		</form>
 
 		<div class="hugh__colorways">
 			<a href="#" aria-label="recently used color" class="hugh__colorway">

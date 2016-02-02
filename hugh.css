@@ -1,7 +1,20 @@
 /* Hugh stylin' */
 
+.hugh__form {
+	content:"";
+	display:table;
+}
+
+.hugh__form:after {
+	clear:both;
+}
+
 .hugh__primary-color {
-	
+	display: block;
+	float: left;
+	width: 46px;
+	height: 46px;
+	padding: 0 2px;
 }
 
 .hugh__submit {
@@ -9,6 +22,15 @@
 }
 
 /* Container for previous colorways */
+.hugh__colorways {
+	content:"";
+	display:table;
+}
+
+.hugh__colorways:after {
+	clear:both;
+}
+
 .hugh__colorway {
 	position: relative;
 	float: left;
