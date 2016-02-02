@@ -124,8 +124,9 @@ class Hugh_Widget extends WP_Widget {
 		<h1>Hugh</h1>
 
 		<form class="hugh__form">
-		<input class="hugh__primary-color" type="color" id="hugh_color" />
-		<input class="hugh__submit" type="submit" />
+			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />
+			<input class="hugh__label" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Because of reasons…', 'hugh' ); ?>" />
+			<input class="hugh__submit" type="submit" />
 		</form>
 
 		<div class="hugh__colorways"></div>
