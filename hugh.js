@@ -12,8 +12,27 @@
 
 	document.head.appendChild( styleBlock );
 
+	function getContrastingColor( hex ) {
+		var colors = hex.match( /#([\da-f]{2})([\da-f]{2})([\da-f]{2})/ ),
+			r = parseInt( colors[1], 16 ),
+			g = parseInt( colors[2], 16 ),
+			b = parseInt( colors[3], 16 ),
+			brightness = Math.sqrt( 0.241 * r * r 
+									+ 0.691 * g * g 
+									+ 0.068 * b * b );
+
+			if ( brightness < 130 ) {
+				return '#ffffff';
+			}
+
+			return '#000000'
+	}
+
 	function setCurrentColor( hex ) {
-		styleBlock.innerText = styleTmpl( { color : hex } );
+		styleBlock.innerText = styleTmpl( {
+				color    : hex,
+				contrast : getContrastingColor( hex )
+			} );
 	}
 
 	$wrap.on( 'click', 'a', function(e){
@@ -30,6 +49,7 @@
 		if ( diff.length ) {
 			// Add a way to update existing colors in case of a duplicate? Eh, we can just have duplicates when readded.
 			_.each( diff, function( item ) {
+				item.contrast = getContrastingColor( item.color );
 				$wrap.prepend( tmpl( item ) );
 				setCurrentColor( item.color );
 			} );

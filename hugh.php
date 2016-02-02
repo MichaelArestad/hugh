@@ -134,7 +134,7 @@ class Hugh_Widget extends WP_Widget {
 		<script type="text/html" id="tmpl-color-template">
 			<a href="#" aria-label="recently used color" class="hugh__colorway" style="background-color:{{{ data.color }}}" title="{{{ data.label }}}" data-color="{{{ data.color }}}">
 				<span class="hugh__screen-reader-text">{{{ data.label }}}</span>
-				<div class="hugh__colorway-accent"></div>
+				<div class="hugh__colorway-accent" style="background-color:{{{ data.contrast }}}"></div>
 			</a>
 		</script>
 		<script type="text/html" id="tmpl-style-template">
