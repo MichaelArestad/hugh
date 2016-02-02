@@ -2,29 +2,30 @@
 (function($){
 
 	var tmpl = wp.template('color-template'),
-		$wrap = $('.hugh__colorways');
-	
-	$wrap.html('');
+		$wrap = $('.hugh__colorways'),
+		$form = $('.hugh__form'),
+		$form_color = $form.find('#hugh_color'),
+		$form_label = $form.find('#hugh_label');
 
 	$.getJSON( Hugh.root + Hugh.namespace + '/colors', function( response ) {
-		/*
-		response = [{
-				color: '#ff0000',
-				label: 'foo'
-			},{
-				color: '#00ff00',
-				label: 'bar'
-			},{
-				color: '#0000ff',
-				label: 'baz'
-			}];
-		*/
 		if ( response.length ) {
 			_.each( response, function( item ) {
 				$wrap.append( tmpl( item ) );
 			} );
 		}
-		
-	} );
+	});
+
+	$form.submit(function(e){
+		e.preventDefault();
+		var data = {
+			color : $form_color.val(),
+			label : $form_label.val()
+		};
+		$.post(  Hugh.root + Hugh.namespace + '/colors/add', data, function( data, textStatus ) {
+			if ( 'success' === textStatus ) {
+				$wrap.prepend( tmpl( data ) );
+			}
+		}, 'json' );
+	})
 
 })(jQuery);
