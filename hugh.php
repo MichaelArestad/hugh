@@ -43,7 +43,7 @@ class Hugh { // Hugh is classy as fuck.
 		) );
 	}
 
-	public static function rest_get_colors( $data ) {
+	public static function rest_get_colors() {
 		return array_values( self::get_colors() );
 	}
 
