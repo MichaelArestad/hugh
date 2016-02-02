@@ -50,7 +50,7 @@ class Hugh { // Hugh is classy as fuck.
 	public static function rest_add_color( $data ) {
 		$new_color = strtolower( $data['color'] );
 		$new_label = wp_kses( $data['label'], array() );
-		
+
 		if ( ! preg_match( '/^#[\da-f]{6}$/', $new_color ) ) {
 			return new WP_Error( 'bad-color', __( 'The specified color is in an invalid format.', 'hugh' ) );
 		}
@@ -77,7 +77,7 @@ class Hugh { // Hugh is classy as fuck.
 		uasort( $colors, array( __CLASS__, 'sort_by_time' ) );
 
 		set_transient( 'hugh_colors', $colors );
-		
+
 		return $colors[ $color ];
 	}
 
@@ -111,6 +111,11 @@ class Hugh_Widget extends WP_Widget {
 		wp_enqueue_style( 'hugh', plugins_url( 'hugh/hugh.css' ) );
 		echo $args['before_widget'];
 		?>
+		<h1>Hugh</h1>
+
+		<input type="color" id="hugh_color" />
+		<input type="submit" />
+
 		<div class="hugh__colorways">
 			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
@@ -184,7 +189,7 @@ class Hugh_Widget extends WP_Widget {
 			<a href="#" aria-label="recently used color" class="hugh__colorway">
 				<div class="hugh__colorway-accent"></div>
 			</a>
-			
+
 		</div>
 		<?php
 		echo $args['after_widget'];
