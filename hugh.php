@@ -30,7 +30,7 @@ class Hugh { // Hugh is classy as fuck.
 
 		// Add new application passwords
 		register_rest_route( 'hugh/v1', '/colors/add', array(
-			'methods' => WP_REST_Server::CREATEABLE,
+			'methods' => WP_REST_Server::CREATABLE,
 			'callback' => __CLASS__ . '::rest_add_color',
 			'args' => array(
 				'color' => array(
