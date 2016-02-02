@@ -15,10 +15,74 @@ class Hugh { // Hugh is classy as fuck.
 
 	public static function add_hooks() {
 		add_action( 'widgets_init', array( __CLASS__, 'widgets_init' ) );
+		add_action( 'rest_api_init', array( __CLASS__, 'rest_api_init' ) );
 	}
 
 	public static function widgets_init() {
 		register_widget( 'Hugh_Widget' );
+	}
+
+	public static function rest_api_init() {
+		register_rest_route( 'hugh/v1', '/colors', array(
+			'methods' => WP_REST_Server::READABLE,
+			'callback' => __CLASS__ . '::rest_get_colors',
+		) );
+
+		// Add new application passwords
+		register_rest_route( 'hugh/v1', '/colors/add', array(
+			'methods' => WP_REST_Server::CREATEABLE,
+			'callback' => __CLASS__ . '::rest_add_color',
+			'args' => array(
+				'color' => array(
+					'required' => true,
+				),
+				'label' => array(
+					'default' => '',
+				),
+			),
+		) );
+	}
+
+	public static function rest_get_colors( $data ) {
+		return self::get_colors();
+	}
+
+	public static function rest_add_color( $data ) {
+		$new_color = strtolower( $data['color'] );
+		$new_label = wp_kses( $data['label'], array() );
+		
+		if ( ! preg_match( '/^#[\da-f]{6}$/', $new_color ) ) {
+			return new WP_Error( 'bad-color', __( 'The specified color is in an invalid format.', 'hugh' ) );
+		}
+
+		return self::add_color( $new_color, $new_label );
+	}
+
+	public static function get_colors() {
+		$colors = get_transient( 'hugh_colors' );
+		if ( ! $colors ) {
+			return array();
+		}
+		return (array) $colors;
+	}
+
+	public static function add_color( $color, $label ) {
+		$colors = self::get_colors();
+		$colors[ $color ] = array(
+			'color' => $color,
+			'label' => $label,
+			'time'  => time(),
+		);
+
+		uasort( $colors, array( __CLASS__, 'sort_by_time' ) );
+
+		set_transient( 'hugh_colors', $colors );
+		
+		return $colors[ $color ];
+	}
+
+	public static function sort_by_time( $a, $b ) {
+		return $a['time'] - $b['time'];
 	}
 }
 
