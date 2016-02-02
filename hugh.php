@@ -138,7 +138,9 @@ class Hugh_Widget extends WP_Widget {
 			</a>
 		</script>
 		<script type="text/html" id="tmpl-style-template">
-			#content {
+			#content,
+			body,
+			html {
 				background-color: {{{ data.color }}};
 				-webkit-transition: background .3s ease-in-out;
 				transition: background .3s ease-in-out;
