@@ -12,6 +12,13 @@
 	word-wrap: normal !important; /* many screen reader and browser combinations announce broken words as they would appear visually */
 }
 
+.hugh__screen-reader-text:focus {
+	position: relative;
+	height: auto;
+	width: auto;
+	display: block;
+}
+
 .hugh__form {
 	content:"";
 	display:table;
@@ -26,19 +33,17 @@
 .hugh__color {
 	display: block;
 	float: left;
-	width: 36px;
+	width: 56px;
 	height: 40px;
 	margin-right: 4px;
 	padding: 0 2px;
 }
 
 .hugh__label {
-	float: left;
 	min-height: 40px;
 	min-width: 160px;
 	min-width: 0;
 	width: 100%;
-	width: calc( 100% - 80px );
 	height: 40px;
 	margin-right: 4px;
 	padding: 8px 12px;
@@ -46,10 +51,8 @@
 }
 
 .hugh__submit {
-	width: 36px;
+	min-width: 76px;
 	height: 40px;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
 	text-align: center;
 }
 

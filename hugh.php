@@ -125,8 +125,8 @@ class Hugh_Widget extends WP_Widget {
 
 		<form class="hugh__form">
 			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />
-			<input class="hugh__label" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Tell me why...', 'hugh' ); ?>" />
-			<button class="hugh__submit" type="submit" ><span class="hugh__screen-reader-text">Submit</span>!</button>
+			<input class="hugh__label hugh__screen-reader-text" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Tell me why...', 'hugh' ); ?>" />
+			<button class="hugh__submit" type="submit" >Apply!</button>
 		</form>
 
 		<div class="hugh__colorways"></div>
@@ -142,6 +142,7 @@ class Hugh_Widget extends WP_Widget {
 			html {
 				background-color: {{{ data.color }}};
 				transition: background .3s ease-in-out;
+				color: {{{ data.contrast }}};
 			}
 		</script>
 		<?php
