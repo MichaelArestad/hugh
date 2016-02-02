@@ -1,5 +1,21 @@
-/* Some styles probably */
+/* Hugh stylin' */
 
-body {
-	background: red;
+/* Container for previous colorways */
+.hugh__colorway {
+	position: relative;
+	float: left;
+	margin: 2px;
+	width: 16px;
+	height: 16px;
+	background: grey; /* TODO temporary */
+}
+
+.hugh__colorway-accent {
+	position: absolute;
+		top: 6px;
+		left: 6px;
+	margin: 0;
+	width: 4px;
+	height: 4px;
+	background: white; /* TODO temporary */
 }

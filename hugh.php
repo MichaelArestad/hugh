@@ -30,7 +30,7 @@ class Hugh_Widget extends WP_Widget {
 	 * Sets up the widgets name etc
 	 */
 	public function __construct() {
-		$widget_ops = array( 
+		$widget_ops = array(
 			'class_name'  => 'hugh_widget',
 			'description' => __( 'Hugh is classy.', 'hugh' ),
 		);
@@ -44,9 +44,59 @@ class Hugh_Widget extends WP_Widget {
 	 * @param array $instance
 	 */
 	public function widget( $args, $instance ) {
+		wp_enqueue_style( 'hugh', plugins_url( 'hugh/hugh.css' ) );
 		echo $args['before_widget'];
 		?>
-		<h1>STUFF HAPPENS HERE</h1>
+		<div class="hugh__colorways">
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+			<div class="hugh__colorway">
+				<div class="hugh__colorway-accent"></div>
+			</div>
+		</div>
 		<?php
 		echo $args['after_widget'];
 	}
