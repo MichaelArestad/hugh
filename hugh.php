@@ -114,6 +114,7 @@ class Hugh_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		wp_enqueue_style( 'hugh', plugins_url( 'hugh/hugh.css' ) );
+		wp_enqueue_script( 'hugh', plugins_url( 'hugh/hugh.js' ) );
 		echo $args['before_widget'];
 		?>
 		<h1>Hugh</h1>
@@ -196,6 +197,12 @@ class Hugh_Widget extends WP_Widget {
 			</a>
 
 		</div>
+
+		<script type="text/html" id="tmpl-color-template">
+			<a href="#" aria-label="recently used color" class="hugh__colorway" title="{{{ data.label }}}">
+				<div class="hugh__colorway-accent" style="background-color:{{{ data.color }}}"></div>
+			</a>
+		</script>
 		<?php
 		echo $args['after_widget'];
 	}
