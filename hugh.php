@@ -76,6 +76,11 @@ class Hugh { // Hugh is classy as fuck.
 
 		uasort( $colors, array( __CLASS__, 'sort_by_time' ) );
 
+		// Only store 100 colors max.
+		if ( sizeof( $colors ) > 100 ) {
+			$colors = array_slice( $colors, 0, 100, true );
+		}
+
 		set_transient( 'hugh_colors', $colors );
 
 		return $colors[ $color ];
