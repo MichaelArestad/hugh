@@ -5,10 +5,6 @@
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-flex: wrap;
-	-webkit-flex: wrap div;
-	-ms-flex: wrap div;
-	flex: wrap div;
 	margin-bottom: 8px;
 }
 
@@ -21,11 +17,20 @@
 	flex-shrink: 0;
 }
 
-.hugh__submit {
+.hugh__label {
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
 	-ms-flex-positive: 1;
 	flex-grow: 1;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	min-height: 40px;
+	min-width: 160px;
+}
+
+.hugh__submit {
+	display: none;
 }
 
 /* Container for previous colorways */
