@@ -1,24 +1,26 @@
 /* Hugh stylin' */
 
 .hugh__form {
-	content:"";
-	display:table;
-}
-
-.hugh__form:after {
-	clear:both;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 8px;
 }
 
 .hugh__primary-color {
 	display: block;
-	float: left;
-	width: 46px;
-	height: 46px;
+	width: 56px;
+	height: 56px;
+	margin-right: 4px;
 	padding: 0 2px;
 }
 
 .hugh__submit {
-
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 }
 
 /* Container for previous colorways */
@@ -34,7 +36,7 @@
 .hugh__colorway {
 	position: relative;
 	float: left;
-	margin: 2px;
+	margin: 0 4px 4px 0;
 	width: 16px;
 	height: 16px;
 	background: grey; /* TODO temporary */
