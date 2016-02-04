@@ -16,6 +16,7 @@ class Hugh { // Hugh is classy as fuck.
 	public static function add_hooks() {
 		add_action( 'widgets_init', array( __CLASS__, 'widgets_init' ) );
 		add_action( 'rest_api_init', array( __CLASS__, 'rest_api_init' ) );
+		add_filter( 'hugh_css', array( __CLASS__, 'hugh_css' ) );
 	}
 
 	public static function widgets_init() {
@@ -88,6 +89,25 @@ class Hugh { // Hugh is classy as fuck.
 
 	public static function sort_by_time( $a, $b ) {
 		return $a['time'] - $b['time'];
+	}
+
+	public static function hugh_css( $css ) {
+		$slug = get_template();
+		
+		switch( $slug ) {
+			case 'twentyfifteen' :
+				ob_start();
+				?>
+				
+				<?php
+				$css = ob_get_clean();
+				break;
+			default:
+				// no changes
+				break;
+		}
+		
+		return $css;
 	}
 }
 
