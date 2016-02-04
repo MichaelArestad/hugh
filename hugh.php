@@ -101,7 +101,6 @@ class Hugh { // Hugh is classy as fuck.
 				body,
 				body.custom-background {
 					background-color: {{ data.color }};
-					transition: background-color .3s ease-in-out;
 				}
 				#page,
 				#page * {
@@ -113,12 +112,31 @@ class Hugh { // Hugh is classy as fuck.
 					color: {{ data.contrast }};
 				}
 				#wpadminbar,
-				#wpadminbar  *,
+				#wpadminbar a,
+				.ab-sub-wrapper,
+				#wpadminbar#wpadminbar .ab-label.ab-label,
 				#wpadminbar .ab-item:before,
-				#wpadminbar .ab-icon:before  {
-					background-color: {{ data.contrast }} !important;
+				#wpadminbar .ab-icon:before,
+				#wpadminbar #adminbarsearch:before {
 					color: {{ data.color }} !important;
-					transition: background-color .3s ease-in-out, color .3s ease-in-out;
+				}
+				#wpadminbar a {
+					background-color: transparent !important;
+				}
+				#wpadminbar,
+				.ab-sub-wrapper  {
+					background-color: {{ data.contrast }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus,
+				#wpadminbar .ab-item:hover:before,
+				#wpadminbar .ab-item:focus:before,
+				#wpadminbar .ab-item:hover .ab-icon:before,
+				#wpadminbar .ab-item:focus .ab-icon:before,
+				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
+				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
+					background-color: {{ data.color }} !important;
+					color: {{ data.contrast }} !important;
 				}
 				<?php
 				$css = ob_get_clean();
@@ -130,15 +148,92 @@ class Hugh { // Hugh is classy as fuck.
 				body,
 				body.custom-background {
 					background-color: {{ data.color }};
-					transition: background-color .3s ease-in-out;
 				}
 				#wpadminbar,
-				#wpadminbar  *,
+				#wpadminbar a,
+				.ab-sub-wrapper,
+				#wpadminbar#wpadminbar .ab-label.ab-label,
 				#wpadminbar .ab-item:before,
-				#wpadminbar .ab-icon:before  {
+				#wpadminbar .ab-icon:before,
+				#wpadminbar #adminbarsearch:before {
+					color: {{ data.contrast }} !important;
+				}
+				#wpadminbar a {
+					background-color: transparent !important;
+				}
+				#wpadminbar,
+				.ab-sub-wrapper  {
+					background-color: {{ data.color }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus,
+				#wpadminbar .ab-item:hover:before,
+				#wpadminbar .ab-item:focus:before,
+				#wpadminbar .ab-item:hover .ab-icon:before,
+				#wpadminbar .ab-item:focus .ab-icon:before,
+				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
+				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
+					background-color: {{ data.contrast }} !important;
+					color: {{ data.color }} !important;
+				}
+				<?php
+				$css = ob_get_clean();
+				break;
+
+			case 'twentyfourteen' :
+				ob_start();
+				?>
+				body,
+				body.custom-background,
+				.site,
+				.entry-header.entry-header,
+				.entry-content.entry-content,
+				.entry-meta.entry-meta,
+				#secondary button {
+					background-color: {{ data.color }};
+					color: {{ data.contrast }} !important;
+				}
+				article * {
 					background-color: {{ data.color }} !important;
 					color: {{ data.contrast }} !important;
-					transition: background-color .3s ease-in-out, color .3s ease-in-out;
+				}
+				.site-header,
+				.site-header *,
+				#secondary,
+				.site-footer,
+				.search-toggle:before {
+					background-color: {{ data.contrast }} !important;
+					color: {{ data.color }} !important;
+				}
+				#secondary  * {
+					color: {{ data.color }} !important;
+				}
+				#wpadminbar,
+				#wpadminbar a,
+				.ab-sub-wrapper,
+				#wpadminbar#wpadminbar .ab-label.ab-label,
+				#wpadminbar .ab-item:before,
+				#wpadminbar .ab-icon:before,
+				#wpadminbar #adminbarsearch:before {
+					color: {{ data.contrast }} !important;
+				}
+				#wpadminbar a {
+					background-color: transparent !important;
+				}
+				#wpadminbar,
+				.ab-sub-wrapper  {
+					background-color: {{ data.color }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus,
+				#wpadminbar .ab-item:hover:before,
+				#wpadminbar .ab-item:focus:before,
+				#wpadminbar .ab-item:hover .ab-icon:before,
+				#wpadminbar .ab-item:focus .ab-icon:before,
+				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
+				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
+					background-color: {{ data.contrast }} !important;
+					color: {{ data.color }} !important;
 				}
 				<?php
 				$css = ob_get_clean();
@@ -204,7 +299,7 @@ class Hugh_Widget extends WP_Widget {
 			body,
 			html {
 				background-color: {{ data.color }};
-				transition: background .3s ease-in-out;
+				transition: background-color .3s ease-in-out;
 				color: {{{ data.contrast }}};
 			}
 			body * {
@@ -215,7 +310,6 @@ class Hugh_Widget extends WP_Widget {
 				color: {{ data.contrast }} !important;
 			}
 			#masthead,
-			#main,
 			#content,
 			#primary,
 			#secondary {
