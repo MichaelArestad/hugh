@@ -8,7 +8,8 @@
 		$form_color = $form.find('#hugh_color'),
 		$form_label = $form.find('#hugh_label'),
 		currColors = [],
-		styleBlock = document.createElement('style');
+		styleBlock = document.createElement('style'),
+		prevColor = window.sessionStorage.getItem('hugoPrevColor');
 
 	document.head.appendChild( styleBlock );
 
@@ -28,6 +29,7 @@
 			return '#000000'
 	}
 
+	// removeTransitions must be set to true in the call to remove them, else they stay.
 	function setCurrentColor( hex, removeTransitions ) {
 		var css = styleTmpl( {
 				color    : hex,
@@ -39,10 +41,12 @@
 		}
 
 		styleBlock.innerText = css;
+
+		window.sessionStorage.setItem( 'hugoPrevColor', hex );
 	}
 
 	$form_color.on( 'change', function() {
-		setCurrentColor( $form_color.val() );
+		setCurrentColor( $form_color.val(), true );
 	});
 
 	$wrap.on( 'click', 'a', function(e){
@@ -71,6 +75,10 @@
 	}
 
 	renderAnyNewColors( Hugh.colors, true );
+
+	if ( prevColor && prevColor.match( /^#[\da-f]{6}$/ ) ) {
+		setCurrentColor( prevColor, true );
+	}
 
 	function updateColors() {
 		$.getJSON( Hugh.root + Hugh.namespace + '/colors', renderAnyNewColors );
