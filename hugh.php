@@ -297,23 +297,38 @@ class Hugh_Widget extends WP_Widget {
 		<script type="text/html" id="tmpl-style-template">
 		<?php ob_start(); ?>
 			body,
+			body.custom-background,
 			html {
 				background-color: {{ data.color }};
 				transition: background-color .3s ease-in-out;
 				color: {{{ data.contrast }}};
 			}
-			body * {
-				color: {{ data.color }} !important;
-			}
-			button {
-				background-color: {{ data.color }} !important;
+			#wpadminbar,
+			#wpadminbar a,
+			.ab-sub-wrapper,
+			#wpadminbar#wpadminbar .ab-label.ab-label,
+			#wpadminbar .ab-item:before,
+			#wpadminbar .ab-icon:before,
+			#wpadminbar #adminbarsearch:before {
 				color: {{ data.contrast }} !important;
 			}
-			#masthead,
-			#content,
-			#primary,
-			#secondary {
-				background-color: {{ data.contrast }};
+			#wpadminbar a {
+				background-color: transparent !important;
+			}
+			#wpadminbar,
+			.ab-sub-wrapper  {
+				background-color: {{ data.color }} !important;
+			}
+			#wpadminbar a:hover,
+			#wpadminbar a:focus,
+			#wpadminbar .ab-item:hover:before,
+			#wpadminbar .ab-item:focus:before,
+			#wpadminbar .ab-item:hover .ab-icon:before,
+			#wpadminbar .ab-item:focus .ab-icon:before,
+			#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
+			#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
+				background-color: {{ data.contrast }} !important;
+				color: {{ data.color }} !important;
 			}
 		<?php echo apply_filters( 'hugh_css', ob_get_clean() ); ?>
 		</script>
