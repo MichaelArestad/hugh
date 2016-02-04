@@ -64,10 +64,12 @@
 		currColors = newColors;
 	}
 
-	(function updateColors() {
+	function updateColors() {
 		$.getJSON( Hugh.root + Hugh.namespace + '/colors', renderAnyNewColors );
 		setTimeout( updateColors, 5000 );
-	})();
+	}
+
+	setTimeout( updateColors, 10000 );
 
 	$form.submit(function(e){
 		e.preventDefault();
