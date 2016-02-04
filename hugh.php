@@ -306,7 +306,7 @@ class Hugh_Widget extends WP_Widget {
 
 		<form class="hugh__form">
 			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />
-			<input class="hugh__label hugh__screen-reader-text" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Tell me why...', 'hugh' ); ?>" />
+			<input class="hugh__label hugh__screen-reader-text" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Leave a secret note', 'hugh' ); ?>" />
 			<button class="hugh__submit" type="submit" >Apply!</button>
 		</form>
 
