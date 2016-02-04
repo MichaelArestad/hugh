@@ -93,12 +93,42 @@ class Hugh { // Hugh is classy as fuck.
 
 	public static function hugh_css( $css ) {
 		$slug = get_template();
-		
+
 		switch( $slug ) {
+			case 'twentysixteen' :
+				ob_start();
+				?>
+				body {
+					background-color: {{ data.color }};
+					transition: background-color .3s ease-in-out;
+				}
+				#wpadminbar,
+				#wpadminbar  *,
+				#wpadminbar .ab-item:before,
+				#wpadminbar .ab-icon:before  {
+					background-color: {{ data.contrast }} !important;
+					color: {{ data.color }} !important;
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
+				}
+				<?php
+				$css = ob_get_clean();
+				break;
+
 			case 'twentyfifteen' :
 				ob_start();
 				?>
-				
+				body {
+					background-color: {{ data.color }};
+					transition: background-color .3s ease-in-out;
+				}
+				#wpadminbar,
+				#wpadminbar  *,
+				#wpadminbar .ab-item:before,
+				#wpadminbar .ab-icon:before  {
+					background-color: {{ data.color }} !important;
+					color: {{ data.contrast }} !important;
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
+				}
 				<?php
 				$css = ob_get_clean();
 				break;
@@ -106,7 +136,7 @@ class Hugh { // Hugh is classy as fuck.
 				// no changes
 				break;
 		}
-		
+
 		return $css;
 	}
 }
