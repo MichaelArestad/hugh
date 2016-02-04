@@ -132,31 +132,31 @@ class Hugh_Widget extends WP_Widget {
 		<div class="hugh__colorways"></div>
 
 		<script type="text/html" id="tmpl-color-template">
-			<a href="#" aria-label="recently used color" class="hugh__colorway" style="background-color:{{{ data.color }}}" title="{{{ data.label }}}" data-color="{{{ data.color }}}">
+			<a href="#" aria-label="recently used color" class="hugh__colorway" style="background-color:{{ data.color }}" title="{{ data.label }}" data-color="{{ data.color }}">
 				<span class="hugh__screen-reader-text">{{{ data.label }}}</span>
-				<div class="hugh__colorway-accent" style="background-color:{{{ data.contrast }}}"></div>
+				<div class="hugh__colorway-accent" style="background-color:{{ data.contrast }}"></div>
 			</a>
 		</script>
 		<script type="text/html" id="tmpl-style-template">
 			body,
 			html {
-				background-color: {{{ data.color }}};
+				background-color: {{ data.color }};
 				transition: background .3s ease-in-out;
 				color: {{{ data.contrast }}};
 			}
 			body * {
-				color: {{{ data.color }}} !important;
+				color: {{ data.color }} !important;
 			}
 			button {
-				background-color: {{{ data.color }}} !important;
-				color: {{{ data.contrast }}} !important;
+				background-color: {{ data.color }} !important;
+				color: {{ data.contrast }} !important;
 			}
 			#masthead,
 			#main,
 			#content,
 			#primary,
 			#secondary {
-				background-color: {{{ data.contrast }}};
+				background-color: {{ data.contrast }};
 			}
 		</script>
 		<?php
