@@ -138,6 +138,7 @@ class Hugh_Widget extends WP_Widget {
 			</a>
 		</script>
 		<script type="text/html" id="tmpl-style-template">
+		<?php ob_start(); ?>
 			body,
 			html {
 				background-color: {{{ data.color }}};
@@ -158,6 +159,7 @@ class Hugh_Widget extends WP_Widget {
 			#secondary {
 				background-color: {{{ data.contrast }}};
 			}
+		<?php echo apply_filters( 'hugh_css', ob_get_clean() ); ?>
 		</script>
 		<?php
 		echo $args['after_widget'];
