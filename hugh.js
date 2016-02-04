@@ -35,7 +35,7 @@
 			} );
 
 		if ( removeTransitions ) {
-			css = css.replace( /transition:[^;}]+[;}]/, '' );
+			css = css.replace( /transition:[^;}]+([;}])/, "$1" );
 		}
 
 		styleBlock.innerText = css;
