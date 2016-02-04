@@ -41,7 +41,9 @@
 
 	$wrap.on( 'click', 'a', function(e){
 		e.preventDefault();
-		setCurrentColor( $(this).data('color') );
+		var color = $(this).data('color');
+		setCurrentColor( color );
+		$form_color.val( color );
 	});
 
 	function renderAnyNewColors( newColors ) {
