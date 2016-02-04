@@ -101,31 +101,36 @@ class Hugh { // Hugh is classy as fuck.
 				body,
 				body.custom-background {
 					background-color: {{ data.color }};
+					transition: background-color .3s ease-in-out;
 				}
 				#page,
 				#page * {
 					background-color: {{ data.contrast }};
 					color: {{ data.color }};
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
 				}
 				#page button {
 					background-color: {{ data.color }};
 					color: {{ data.contrast }};
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
 				}
 				#wpadminbar,
 				#wpadminbar a,
-				.ab-sub-wrapper,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper,
 				#wpadminbar#wpadminbar .ab-label.ab-label,
 				#wpadminbar .ab-item:before,
 				#wpadminbar .ab-icon:before,
 				#wpadminbar #adminbarsearch:before {
 					color: {{ data.color }} !important;
-				}
-				#wpadminbar a {
-					background-color: transparent !important;
+					transition: color .3s ease-in-out;
 				}
 				#wpadminbar,
-				.ab-sub-wrapper  {
+				#wpadminbar a,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper {
 					background-color: {{ data.contrast }} !important;
+					transition: background-color .3s ease-in-out;
 				}
 				#wpadminbar a:hover,
 				#wpadminbar a:focus,
@@ -135,8 +140,11 @@ class Hugh { // Hugh is classy as fuck.
 				#wpadminbar .ab-item:focus .ab-icon:before,
 				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
 				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
-					background-color: {{ data.color }} !important;
 					color: {{ data.contrast }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus {
+					background-color: {{ data.color }} !important;
 				}
 				<?php
 				$css = ob_get_clean();
@@ -148,22 +156,25 @@ class Hugh { // Hugh is classy as fuck.
 				body,
 				body.custom-background {
 					background-color: {{ data.color }};
+					transition: background-color .3s ease-in-out;
 				}
 				#wpadminbar,
 				#wpadminbar a,
-				.ab-sub-wrapper,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper,
 				#wpadminbar#wpadminbar .ab-label.ab-label,
 				#wpadminbar .ab-item:before,
 				#wpadminbar .ab-icon:before,
 				#wpadminbar #adminbarsearch:before {
 					color: {{ data.contrast }} !important;
-				}
-				#wpadminbar a {
-					background-color: transparent !important;
+					transition: color .3s ease-in-out;
 				}
 				#wpadminbar,
-				.ab-sub-wrapper  {
+				#wpadminbar a,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper {
 					background-color: {{ data.color }} !important;
+					transition: background-color .3s ease-in-out;
 				}
 				#wpadminbar a:hover,
 				#wpadminbar a:focus,
@@ -173,8 +184,11 @@ class Hugh { // Hugh is classy as fuck.
 				#wpadminbar .ab-item:focus .ab-icon:before,
 				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
 				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
-					background-color: {{ data.contrast }} !important;
 					color: {{ data.color }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus {
+					background-color: {{ data.contrast }} !important;
 				}
 				<?php
 				$css = ob_get_clean();
@@ -192,10 +206,12 @@ class Hugh { // Hugh is classy as fuck.
 				#secondary button {
 					background-color: {{ data.color }};
 					color: {{ data.contrast }} !important;
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
 				}
 				article * {
 					background-color: {{ data.color }} !important;
 					color: {{ data.contrast }} !important;
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
 				}
 				.site-header,
 				.site-header *,
@@ -204,25 +220,29 @@ class Hugh { // Hugh is classy as fuck.
 				.search-toggle:before {
 					background-color: {{ data.contrast }} !important;
 					color: {{ data.color }} !important;
+					transition: background-color .3s ease-in-out, color .3s ease-in-out;
 				}
 				#secondary  * {
 					color: {{ data.color }} !important;
+					transition: color .3s ease-in-out;
 				}
 				#wpadminbar,
 				#wpadminbar a,
-				.ab-sub-wrapper,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper,
 				#wpadminbar#wpadminbar .ab-label.ab-label,
 				#wpadminbar .ab-item:before,
 				#wpadminbar .ab-icon:before,
 				#wpadminbar #adminbarsearch:before {
 					color: {{ data.contrast }} !important;
-				}
-				#wpadminbar a {
-					background-color: transparent !important;
+					transition: color .3s ease-in-out;
 				}
 				#wpadminbar,
-				.ab-sub-wrapper  {
+				#wpadminbar a,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper  {
 					background-color: {{ data.color }} !important;
+					transition: background-color .3s ease-in-out;
 				}
 				#wpadminbar a:hover,
 				#wpadminbar a:focus,
@@ -232,8 +252,11 @@ class Hugh { // Hugh is classy as fuck.
 				#wpadminbar .ab-item:focus .ab-icon:before,
 				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
 				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
-					background-color: {{ data.contrast }} !important;
 					color: {{ data.color }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus {
+					background-color: {{ data.contrast }} !important;
 				}
 				<?php
 				$css = ob_get_clean();
@@ -300,8 +323,8 @@ class Hugh_Widget extends WP_Widget {
 			body.custom-background,
 			html {
 				background-color: {{ data.color }};
-				transition: background-color .3s ease-in-out;
 				color: {{{ data.contrast }}};
+				transition: background-color .3s ease-in-out, color .3s ease-in-out;
 			}
 			#wpadminbar,
 			#wpadminbar a,
@@ -311,13 +334,13 @@ class Hugh_Widget extends WP_Widget {
 			#wpadminbar .ab-icon:before,
 			#wpadminbar #adminbarsearch:before {
 				color: {{ data.contrast }} !important;
-			}
-			#wpadminbar a {
-				background-color: transparent !important;
+				transition: color .3s ease-in-out;
 			}
 			#wpadminbar,
+			#wpadminbar a,
 			.ab-sub-wrapper  {
 				background-color: {{ data.color }} !important;
+				transition: background-color .3s ease-in-out;
 			}
 			#wpadminbar a:hover,
 			#wpadminbar a:focus,
@@ -327,8 +350,11 @@ class Hugh_Widget extends WP_Widget {
 			#wpadminbar .ab-item:focus .ab-icon:before,
 			#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
 			#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
-				background-color: {{ data.contrast }} !important;
 				color: {{ data.color }} !important;
+			}
+			#wpadminbar a:hover,
+			#wpadminbar a:focus {
+				background-color: {{ data.contrast }} !important;
 			}
 		<?php echo apply_filters( 'hugh_css', ob_get_clean() ); ?>
 		</script>
