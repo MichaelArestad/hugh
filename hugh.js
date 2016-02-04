@@ -28,11 +28,17 @@
 			return '#000000'
 	}
 
-	function setCurrentColor( hex ) {
-		styleBlock.innerText = styleTmpl( {
+	function setCurrentColor( hex, removeTransitions ) {
+		var css = styleTmpl( {
 				color    : hex,
 				contrast : getContrastingColor( hex )
 			} );
+
+		if ( removeTransitions ) {
+			css = css.replace( /transition:[^;}]+([;}])/, "$1" );
+		}
+
+		styleBlock.innerText = css;
 	}
 
 	$form_color.on( 'change', function() {
@@ -46,7 +52,7 @@
 		$form_color.val( color );
 	});
 
-	function renderAnyNewColors( newColors ) {
+	function renderAnyNewColors( newColors, removeTransitions ) {
 		var colorColors = _.pluck( currColors, 'color' ),
 			diff = _.filter( newColors, function( maybeNewColor ) {
 				return ! _.contains( colorColors, maybeNewColor.color );
@@ -57,17 +63,21 @@
 			_.each( diff, function( item ) {
 				item.contrast = getContrastingColor( item.color );
 				$wrap.prepend( tmpl( item ) );
-				setCurrentColor( item.color );
+				setCurrentColor( item.color, removeTransitions );
 			} );
 		}
 
 		currColors = newColors;
 	}
 
-	(function updateColors() {
+	renderAnyNewColors( Hugh.colors, true );
+
+	function updateColors() {
 		$.getJSON( Hugh.root + Hugh.namespace + '/colors', renderAnyNewColors );
 		setTimeout( updateColors, 5000 );
-	})();
+	}
+
+	setTimeout( updateColors, 10000 );
 
 	$form.submit(function(e){
 		e.preventDefault();

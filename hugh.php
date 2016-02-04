@@ -298,6 +298,7 @@ class Hugh_Widget extends WP_Widget {
 		wp_localize_script( 'hugh', 'Hugh', array(
 			'root'       => esc_url_raw( rest_url() ),
 			'namespace'  => 'hugh/v1',
+			'colors'     => array_values( Hugh::get_colors() ),
 		) );
 		echo $args['before_widget'];
 		?>
