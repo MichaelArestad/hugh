@@ -64,6 +64,8 @@
 		currColors = newColors;
 	}
 
+	renderAnyNewColors( Hugh.colors, true );
+
 	function updateColors() {
 		$.getJSON( Hugh.root + Hugh.namespace + '/colors', renderAnyNewColors );
 		setTimeout( updateColors, 5000 );
