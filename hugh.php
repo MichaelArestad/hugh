@@ -144,6 +144,20 @@ class Hugh_Widget extends WP_Widget {
 				transition: background .3s ease-in-out;
 				color: {{{ data.contrast }}};
 			}
+			body * {
+				color: {{{ data.color }}} !important;
+			}
+			button {
+				background-color: {{{ data.color }}} !important;
+				color: {{{ data.contrast }}} !important;
+			}
+			#masthead,
+			#main,
+			#content,
+			#primary,
+			#secondary {
+				background-color: {{{ data.contrast }}};
+			}
 		</script>
 		<?php
 		echo $args['after_widget'];
