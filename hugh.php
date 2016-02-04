@@ -102,6 +102,10 @@ class Hugh { // Hugh is classy as fuck.
 					background-color: {{ data.color }};
 					transition: background-color .3s ease-in-out;
 				}
+				#page {
+					background-color: {{ data.contrast }};
+					color: {{ data.color }};
+				}
 				#wpadminbar,
 				#wpadminbar  *,
 				#wpadminbar .ab-item:before,
@@ -117,7 +121,8 @@ class Hugh { // Hugh is classy as fuck.
 			case 'twentyfifteen' :
 				ob_start();
 				?>
-				body {
+				body,
+				body.custom-background {
 					background-color: {{ data.color }};
 					transition: background-color .3s ease-in-out;
 				}
