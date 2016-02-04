@@ -98,13 +98,19 @@ class Hugh { // Hugh is classy as fuck.
 			case 'twentysixteen' :
 				ob_start();
 				?>
-				body {
+				body,
+				body.custom-background {
 					background-color: {{ data.color }};
 					transition: background-color .3s ease-in-out;
 				}
-				#page {
+				#page,
+				#page * {
 					background-color: {{ data.contrast }};
 					color: {{ data.color }};
+				}
+				#page button {
+					background-color: {{ data.color }};
+					color: {{ data.contrast }};
 				}
 				#wpadminbar,
 				#wpadminbar  *,
