@@ -148,7 +148,8 @@ class Hugh { // Hugh is classy as fuck.
 				break;
 		}
 
-		return $css;
+		// Oh, and minify it too.
+		return str_replace( array( "\t", "\r", "\n" ), '', $css );
 	}
 }
 
