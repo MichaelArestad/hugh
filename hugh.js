@@ -35,6 +35,10 @@
 			} );
 	}
 
+	$form_color.on( 'change', function() {
+		setCurrentColor( $form_color.val() );
+	});
+
 	$wrap.on( 'click', 'a', function(e){
 		e.preventDefault();
 		setCurrentColor( $(this).data('color') );
