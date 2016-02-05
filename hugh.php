@@ -294,7 +294,7 @@ class Hugh_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		wp_enqueue_style( 'hugh', plugins_url( 'hugh/hugh.css' ) );
-		wp_enqueue_script( 'hugh', plugins_url( 'hugh/hugh.js' ), array( 'wp-util' ), time() );
+		wp_enqueue_script( 'hugh', plugins_url( 'hugh/hugh.js' ), array( 'wp-util' ), '1.0.1' );
 		wp_localize_script( 'hugh', 'Hugh', array(
 			'root'       => esc_url_raw( rest_url() ),
 			'namespace'  => 'hugh/v1',
