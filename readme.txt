@@ -3,7 +3,7 @@ Contributors: michael-arestad, georgestephanis
 Tags: colors, custom, social
 Requires at least: 4.4
 Tested up to: 4.5
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,9 @@ colors, and visitors can even get into 'color battles' fighting over who
 gets to determine the color scheme.
 
 == Changelog ==
+
+= 1.0.1 =
+* Minor tidying. Updated button text, added some missing i18n function calls.
 
 = 1.0 =
 * Initial Release.
