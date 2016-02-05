@@ -283,7 +283,7 @@ class Hugh_Widget extends WP_Widget {
 			'class_name'  => 'hugh_widget',
 			'description' => __( 'Hugh is classy.', 'hugh' ),
 		);
-		parent::__construct( 'hugh_widget', 'Hugh Widget', $widget_ops );
+		parent::__construct( 'hugh_widget', __( 'Hugh Widget', 'hugh' ), $widget_ops );
 	}
 
 	/**
@@ -302,12 +302,12 @@ class Hugh_Widget extends WP_Widget {
 		) );
 		echo $args['before_widget'];
 		?>
-		<h1 class="widget-title">Make a color decision</h1>
+		<h1 class="widget-title"><?php esc_html_e( 'Make a color decision', 'hugh' ); ?></h1>
 
 		<form class="hugh__form">
 			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />
 			<input class="hugh__label hugh__screen-reader-text" type="label" id="hugh_label" placeholder="<?php esc_attr_e( 'Leave a secret note', 'hugh' ); ?>" />
-			<button class="hugh__submit" type="submit" >Apply!</button>
+			<button class="hugh__submit" type="submit"><?php esc_html_e( 'Share!', 'hugh' ); ?></button>
 		</form>
 
 		<div class="hugh__colorways"></div>
