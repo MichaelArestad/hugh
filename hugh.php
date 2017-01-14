@@ -4,7 +4,7 @@
  * Plugin Name: Hugh
  * Plugin URI:  https://wordpress.org/plugins/hugh/
  * Description: Democratize coloring.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      Michael Arestad and George Stephanis
  * Author URI:  http://blog.michaelarestad.com
  * Text Domain: hugh
@@ -95,6 +95,106 @@ class Hugh { // Hugh is classy as fuck.
 		$slug = get_template();
 
 		switch( $slug ) {
+			case 'twentyseventeen' :
+				ob_start();
+				?>
+				#page * {
+					color: {{ data.color }};
+					transition: background-color .3s ease-in-out, color .3s ease-in-out, fill .3s ease-in-out;
+				}
+				.site-content-contain,
+				.navigation-top,
+				.main-navigation ul ul,
+				.main-navigation li li:hover,
+				.main-navigation li li.focus {
+					background-color: {{ data.contrast }};
+				}
+				#page .social-navigation a {
+					background-color: {{ data.color }};
+				}
+				.main-navigation ul ul,
+				input[type="search"] {
+					border-color: {{ data.color }};
+				}
+				.main-navigation ul li.menu-item-has-children:after,
+				.main-navigation ul li.page_item_has_children:after {
+					border-color: transparent transparent {{ data.color }};
+				}
+				.entry-title a, .entry-meta a, .page-links a, .page-links a .page-number, .entry-footer a, .entry-footer .cat-links a, .entry-footer .tags-links a, .edit-link a, .post-navigation a, .logged-in-as a, .comment-navigation a, .comment-metadata a, .comment-metadata a.comment-edit-link, .comment-reply-link, a .nav-title, .pagination a, .comments-pagination a, .site-info a, .widget .widget-title a, .widget ul li a, .site-footer .widget-area ul li a, .site-footer .widget-area ul li a {
+					-webkit-box-shadow: inset 0 -1px 0 {{ data.color }};
+					box-shadow: inset 0 -1px 0 {{ data.color }};
+				}
+				.entry-content a:focus, .entry-content a:hover, .entry-summary a:focus, .entry-summary a:hover, .widget a:focus, .widget a:hover, .site-footer .widget-area a:focus, .site-footer .widget-area a:hover, .posts-navigation a:focus, .posts-navigation a:hover, .comment-metadata a:focus, .comment-metadata a:hover, .comment-metadata a.comment-edit-link:focus, .comment-metadata a.comment-edit-link:hover, .comment-reply-link:focus, .comment-reply-link:hover, .widget_authors a:focus strong, .widget_authors a:hover strong, .entry-title a:focus, .entry-title a:hover, .entry-meta a:focus, .entry-meta a:hover, .page-links a:focus .page-number, .page-links a:hover .page-number, .entry-footer a:focus, .entry-footer a:hover, .entry-footer .cat-links a:focus, .entry-footer .cat-links a:hover, .entry-footer .tags-links a:focus, .entry-footer .tags-links a:hover, .post-navigation a:focus, .post-navigation a:hover, .pagination a:not(.prev):not(.next):focus, .pagination a:not(.prev):not(.next):hover, .comments-pagination a:not(.prev):not(.next):focus, .comments-pagination a:not(.prev):not(.next):hover, .logged-in-as a:focus, .logged-in-as a:hover, a:focus .nav-title, a:hover .nav-title, .edit-link a:focus, .edit-link a:hover, .site-info a:focus, .site-info a:hover, .widget .widget-title a:focus, .widget .widget-title a:hover, .widget ul li a:focus, .widget ul li a:hover {
+					-webkit-box-shadow: inset 0 0 0 {{ data.color }}, 0 3px 0 {{ data.color }};
+					box-shadow: inset 0 0 0 {{ data.color }}, 0 3px 0 {{ data.color }};
+				}
+				tr,
+				thead th,
+				.navigation-top {
+					border-bottom-color: {{ data.color }};
+				}
+				#page pre,
+				#page button,
+				#page .prev.page-numbers,
+				#page .next.page-numbers {
+					color: {{ data.contrast }};
+					background-color: {{ data.color }};
+				}
+				.navigation-top,
+				.site-footer,
+				.pagination, .comments-pagination {
+					border-top-color: {{ data.color }};
+				}
+				#page .hugh__colorway {
+					-webkit-box-shadow: none;
+					box-shadow: none;
+				}
+				#page .social-navigation svg,
+				#page .page-numbers svg {
+					fill: {{ data.contrast }};
+				}
+				#page .hugh__color {
+					width: 56px;
+					padding: 0 2px;
+				}
+				#page .hugh__submit {
+					font-size: 12px;
+				}
+				#wpadminbar,
+				#wpadminbar a,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper,
+				#wpadminbar#wpadminbar .ab-label.ab-label,
+				#wpadminbar .ab-item:before,
+				#wpadminbar .ab-icon:before,
+				#wpadminbar #adminbarsearch:before {
+					color: {{ data.color }} !important;
+					transition: color .3s ease-in-out;
+				}
+				#wpadminbar,
+				#wpadminbar a,
+				#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+				#wpadminbar .menupop .ab-sub-wrapper {
+					background-color: {{ data.contrast }} !important;
+					transition: background-color .3s ease-in-out;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus,
+				#wpadminbar .ab-item:hover:before,
+				#wpadminbar .ab-item:focus:before,
+				#wpadminbar .ab-item:hover .ab-icon:before,
+				#wpadminbar .ab-item:focus .ab-icon:before,
+				#wpadminbar#wpadminbar .ab-item.ab-item:hover .ab-label,
+				#wpadminbar#wpadminbar .ab-item.ab-item:focus .ab-label {
+					color: {{ data.contrast }} !important;
+				}
+				#wpadminbar a:hover,
+				#wpadminbar a:focus {
+					background-color: {{ data.color }} !important;
+				}
+				<?php
+				$css = ob_get_clean();
+				break;
 			case 'twentysixteen' :
 				ob_start();
 				?>
