@@ -27,6 +27,12 @@ class Hugh { // Hugh is classy as fuck.
 		register_rest_route( 'hugh/v1', '/colors', array(
 			'methods' => WP_REST_Server::READABLE,
 			'callback' => __CLASS__ . '::rest_get_colors',
+			'args' => array(
+				'limit' => array(
+					'default' => 0,
+					'sanitize_callback' => 'absint',
+				),
+			),
 		) );
 
 		// Add new application passwords
@@ -45,7 +51,12 @@ class Hugh { // Hugh is classy as fuck.
 	}
 
 	public static function rest_get_colors( $data ) {
-		return array_values( self::get_colors() );
+		$colors = array_values( self::get_colors() );
+		if ( $data['limit'] && is_int( $data['limit'] ) ) {
+			// If we're limiting, let's get the last X items from the list, as they're the freshest.
+			$colors = array_slice( $colors, - $data['limit'] );
+		}
+		return $colors;
 	}
 
 	public static function rest_add_color( $data ) {
