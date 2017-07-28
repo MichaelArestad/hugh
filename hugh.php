@@ -412,8 +412,9 @@ class Hugh_Widget extends WP_Widget {
 			'colors'     => array_values( Hugh::get_colors() ),
 		) );
 		echo $args['before_widget'];
+
+		echo $args['before_title'] . esc_html( 'Make a color decision', 'hugh' ) . $args['after_title'];
 		?>
-		<h1 class="widget-title"><?php esc_html_e( 'Make a color decision', 'hugh' ); ?></h1>
 
 		<form class="hugh__form">
 			<input class="hugh__color" type="color" id="hugh_color" value="#ffffff" />
